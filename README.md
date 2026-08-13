@@ -3,7 +3,12 @@
 **Remedy 08 · No.88 Emotional Detox**  
 by Soozhee · Produced by Caelverum Music
 
-**Live:** https://foolsgold.vercel.app
+**Live:** https://foolsgold-soozhee.vercel.app
+
+## Domain note
+
+`foolsgold.vercel.app` is already taken (or paused), so Vercel created the project as `foolsgold-two`.  
+We are using the cleaner custom domain **foolsgold-soozhee.vercel.app** instead.
 
 ## Ready for assets
 
@@ -28,6 +33,6 @@ Upload these exact files from your Google Drive into the folders:
 - Full-screen lightbox (tap card → lightbox, × or dark background to close, never leaves the page)
 - Streaming link placeholders (update the `href="#"` in index.html once live on Spotify / Apple / Amazon)
 
-Once the assets are uploaded, connect the repo to Vercel and assign the domain `foolsgold.vercel.app`.
+Once the assets are uploaded, go to the Vercel project → Settings → Domains and add **foolsgold-soozhee.vercel.app**.
 
 © Soozhee and Caelverum Music. All rights reserved.
