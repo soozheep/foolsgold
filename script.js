@@ -1,4 +1,4 @@
-const SITE_URL = 'https://foolsgold.vercel.app';
+const SITE_URL = 'https://foolsgold-soozhee.vercel.app';
 
 const lyricCards = [
   { num: '01', text: 'Don’t let yourself and your heart suffer chasing fools gold' },
@@ -32,7 +32,7 @@ function renderCards() {
   if (!lyricsGrid || !aboutGrid) return;
 
   lyricsGrid.innerHTML = lyricCards.map(c => `
-    <article class="card" data-title="Fools Gold — ${c.num}/16" data-text="${c.text} — Fools Gold by Soozhee | foolsgold.vercel.app" data-img="assets/lyrics/fg-${c.num}.png">
+    <article class="card" data-title="Fools Gold — ${c.num}/16" data-text="${c.text} — Fools Gold by Soozhee | foolsgold-soozhee.vercel.app" data-img="assets/lyrics/fg-${c.num}.png">
       <div class="card-img-wrap">
         <span class="card-num">${c.num}</span>
         <a href="assets/lyrics/fg-${c.num}.png" target="_blank" rel="noopener"><img class="card-img" src="assets/lyrics/fg-${c.num}.png" alt="Lyric card ${c.num}" loading="lazy" /></a>
@@ -51,7 +51,7 @@ function renderCards() {
     </article>`).join('');
 
   aboutGrid.innerHTML = patternCards.map(c => `
-    <article class="card card-wide" data-title="${c.title} — Fools Gold" data-text="${c.text} — foolsgold.vercel.app" data-img="assets/cards/fg-card-${c.num}.png">
+    <article class="card card-wide" data-title="${c.title} — Fools Gold" data-text="${c.text} — foolsgold-soozhee.vercel.app" data-img="assets/cards/fg-card-${c.num}.png">
       <div class="card-img-wrap">
         <span class="card-num">${c.num} / 04</span>
         <a href="assets/cards/fg-card-${c.num}.png" target="_blank" rel="noopener"><img class="card-img" src="assets/cards/fg-card-${c.num}.png" alt="${c.title}" loading="lazy" /></a>
