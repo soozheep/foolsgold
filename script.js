@@ -1,5 +1,77 @@
 const SITE_URL = 'https://foolsgold.vercel.app';
 
+const lyricCards = [
+  { num: '01', text: 'Don’t let yourself and your heart suffer chasing fools gold' },
+  { num: '02', text: 'See yourself clearly for who you are strong and bold' },
+  { num: '03', text: 'Seek what you truly and deeply desire. Let it ignite' },
+  { num: '04', text: 'Avoid the false promises. Don’t lose your guiding light' },
+  { num: '05', text: 'Embrace the fire. The needs you hold inside. No compromise' },
+  { num: '06', text: 'True fulfillment comes from authenticity don’t you know' },
+  { num: '07', text: 'Listen to your heart it whispers where to go' },
+  { num: '08', text: 'Never trade your true desires for distractions fleeting grey' },
+  { num: '09', text: 'A life built on truth shines brighter everyday' },
+  { num: '10', text: 'Trust your inner compass to point the way' },
+  { num: '11', text: 'Be honest with yourself what brings you joy' },
+  { num: '12', text: 'The quiet voice of your heart knows the way' },
+  { num: '13', text: 'What’s real will stand when illusions fall' },
+  { num: '14', text: 'Fools gold may glitter but it’ll never last' },
+  { num: '15', text: 'Genuine needs and passions paves the road to the truest treasure' },
+  { num: '16', text: 'Seeking authenticity you’ll find the way' }
+];
+
+const patternCards = [
+  { num: '01', title: 'The Pattern', desc: 'Chasing what glitters but never lasts.', text: 'Don’t let yourself and your heart suffer chasing fools gold.' },
+  { num: '02', title: 'The Mechanism', desc: 'How false promises steal your guiding light.', text: 'Never trade your true desires for distractions fleeting grey.' },
+  { num: '03', title: 'The Release', desc: 'Let your passions be your guide.', text: 'Embrace the fire. The needs you hold inside. No compromise.' },
+  { num: '04', title: 'The Truth', desc: 'Authenticity is the key. It’s worth it all.', text: 'True fulfillment comes from authenticity. A life built on truth shines brighter everyday.' }
+];
+
+function renderCards() {
+  const lyricsGrid = document.getElementById('lyricsGrid');
+  const aboutGrid = document.getElementById('aboutGrid');
+  if (!lyricsGrid || !aboutGrid) return;
+
+  lyricsGrid.innerHTML = lyricCards.map(c => `
+    <article class="card" data-title="Fools Gold — ${c.num}/16" data-text="${c.text} — Fools Gold by Soozhee | foolsgold.vercel.app" data-img="assets/lyrics/fg-${c.num}.png">
+      <div class="card-img-wrap">
+        <span class="card-num">${c.num}</span>
+        <a href="assets/lyrics/fg-${c.num}.png" target="_blank" rel="noopener"><img class="card-img" src="assets/lyrics/fg-${c.num}.png" alt="Lyric card ${c.num}" loading="lazy" /></a>
+      </div>
+      <div class="card-body">
+        <div class="share-bar">
+          <button class="share-btn primary" onclick="shareCard(this)">Share</button>
+          <a class="share-btn" href="#" onclick="shareTo('x', this); return false;">𝕏</a>
+          <a class="share-btn" href="#" onclick="shareTo('fb', this); return false;">Facebook</a>
+          <a class="share-btn" href="#" onclick="shareTo('li', this); return false;">LinkedIn</a>
+          <a class="share-btn" href="#" onclick="shareTo('email', this); return false;">Email</a>
+          <button class="share-btn" onclick="copyLink(this)">Copy</button>
+          <a class="share-btn" download="fg-${c.num}.png" href="assets/lyrics/fg-${c.num}.png">Download</a>
+        </div>
+      </div>
+    </article>`).join('');
+
+  aboutGrid.innerHTML = patternCards.map(c => `
+    <article class="card card-wide" data-title="${c.title} — Fools Gold" data-text="${c.text} — foolsgold.vercel.app" data-img="assets/cards/fg-card-${c.num}.png">
+      <div class="card-img-wrap">
+        <span class="card-num">${c.num} / 04</span>
+        <a href="assets/cards/fg-card-${c.num}.png" target="_blank" rel="noopener"><img class="card-img" src="assets/cards/fg-card-${c.num}.png" alt="${c.title}" loading="lazy" /></a>
+      </div>
+      <div class="card-body">
+        <h3>${c.title}</h3>
+        <p>${c.desc}</p>
+        <div class="share-bar">
+          <button class="share-btn primary" onclick="shareCard(this)">Share</button>
+          <a class="share-btn" href="#" onclick="shareTo('x', this); return false;">𝕏</a>
+          <a class="share-btn" href="#" onclick="shareTo('fb', this); return false;">Facebook</a>
+          <a class="share-btn" href="#" onclick="shareTo('li', this); return false;">LinkedIn</a>
+          <a class="share-btn" href="#" onclick="shareTo('email', this); return false;">Email</a>
+          <button class="share-btn" onclick="copyLink(this)">Copy</button>
+          <a class="share-btn" download="fg-card-${c.num}.png" href="assets/cards/fg-card-${c.num}.png">Download</a>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
 function getCardData(el) {
   const card = el.closest('.card');
   return {
@@ -49,8 +121,8 @@ async function sharePage() {
   if (navigator.share) {
     try {
       await navigator.share({
-        title: 'Pour It Out — Sonic Remedy | Soozhee',
-        text: 'Empty the clutter. Make room for the light. Pour It Out by Soozhee.',
+        title: 'Fools Gold — Sonic Remedy | Soozhee',
+        text: 'True fulfillment comes from authenticity. Listen to your heart. Fools Gold by Soozhee.',
         url: SITE_URL
       });
       return;
@@ -73,7 +145,6 @@ function closeMobileMenu() {
   document.getElementById('mobileNav').classList.remove('open');
 }
 
-/* ===== LIGHTBOX ===== */
 function openLightbox(src) {
   const lb = document.getElementById('lightbox');
   const img = document.getElementById('lightboxImg');
@@ -88,7 +159,6 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-// Intercept card image clicks so they open the lightbox instead of a new tab
 document.addEventListener('click', function (e) {
   const link = e.target.closest('.card-img-wrap a');
   if (link) {
@@ -97,8 +167,8 @@ document.addEventListener('click', function (e) {
   }
 });
 
-// Close on background click or close button
 document.addEventListener('DOMContentLoaded', function () {
+  renderCards();
   const lb = document.getElementById('lightbox');
   if (lb) {
     lb.addEventListener('click', function (e) {
@@ -109,12 +179,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Close on Escape key
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeLightbox();
 });
 
-/* Audio Player */
 (function () {
   const audio = document.getElementById('audio');
   const playBtn = document.getElementById('playBtn');
