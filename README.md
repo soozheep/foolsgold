@@ -1,54 +1,57 @@
-# Pour It Out — Sonic Remedy : Audiosensory Resonance
+# Fools Gold — Sonic Remedy : Audiosensory Resonance
 
-**by Soozhee** · Produced by Caelverum Music
+**Remedy 08 · No.88 Emotional Detox**  
+by Soozhee · Produced by Caelverum Music
 
 Live target: https://foolsgold.vercel.app
 
 ## Structure
 
-This page follows the same professional luxe template as the other Sonic Remedy / Clarity sites.
+Same professional luxe template as your other Sonic Remedy song pages (breathelikeitmatters, pouritout, etc.).
 
 - Cover art + custom MP3 player
-- Shareable lyric cards (in order)
+- 16 shareable lyric cards in order
 - 4 teaching / pattern image cards
 - Spotify / Apple Music / Amazon Music links
 - Mobile hamburger menu
-- Full-screen lightbox for all cards (tap image → lightbox, × or background to close, never leaves the page)
+- Full-screen lightbox for all cards (tap → lightbox, large × top-right, tap dark background to close, never leaves the page)
 
-## Assets to upload
-
-Upload into the existing folders using **exact file names from Google Drive "01 Pour It Out "**:
+## Assets to upload (exact filenames from Google Drive)
 
 **assets/**
-- `Cover.PNG`
-- `POUR IT OUT MASTERED.mp3`
+- `fg-cover.png`   (or `fg-cover` — match exact name/case from Drive)
+- `08_Fools Gold.mp3`   (the mastered version)
 
 **assets/lyrics/**
-- `pio-01.png` (note case from Drive: pio-01)
-- `Pio-02.png`
-- `Pio-03.png`
-- `Pio-04.png`
-- `Pio-05.png`
-- `Pio-06.png`
-- `Pio-07.png`
-- `Pio-08.png`
-- `Pio-09.png`
-- `Pio-10.png`
+- `fg-01.png`
+- `fg-02.png`
+- `fg-03.png`
+- `fg-04.png`
+- `fg-05.png`
+- `fg-06.png`
+- `fg-07.png`
+- `fg-08.png`
+- `fg-09.png`
+- `fg-10.png`
+- `fg-11.png`
+- `fg-12.png`
+- `fg-13.png`
+- `fg-14.png`
+- `fg-15.png`
+- `fg-16.png`
 
 **assets/cards/**
-- `card-01.PNG`
-- `card-02.PNG`
-- `card-03.PNG`
-- `card-04.PNG`
+- `fg-card-01.png`
+- `fg-card-02.png`
+- `fg-card-03.png`
+- `fg-card-04.png`
 
 ## Deploy
 
-1. Upload the binary assets above into the folders (you can drag-drop in GitHub web UI or use git).
+1. Upload the binary assets above into the folders (GitHub web UI drag-and-drop works).
 2. Connect the repo to Vercel.
 3. Set custom domain `foolsgold.vercel.app`.
 
-The index.html, styles.css and script.js are already written to match the exact file names and the professional luxe gold theme of the cards.
-
-Streaming links are populated from the existing Pour It Out release.
+`styles.css` and `script.js` are already in place with the luxe gold theme + working lightbox + hamburger.
 
 © Soozhee and Caelverum Music. All rights reserved.
